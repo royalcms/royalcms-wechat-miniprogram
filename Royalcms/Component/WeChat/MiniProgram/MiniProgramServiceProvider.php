@@ -21,7 +21,7 @@ class MiniProgramServiceProvider extends ServiceProvider
     {
         $wechat = $this->royalcms['wechat'];
         
-        $wechat->bindShared('weapp', function($wechat)
+        $wechat->singleton('weapp', function($wechat)
         {
             return new MiniProgram($wechat);
         });
